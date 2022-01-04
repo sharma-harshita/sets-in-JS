@@ -1,40 +1,73 @@
+console.log("Hello World");
 
-var numbers = [1,2,3,4,5,2,5,6];
 
-var mySet = new Set(numbers);
-var myMap = new Map();
-console.log(numbers);
+// Sets : It is the collection of unique elements , we can never ever have duplicate elements
+
+let num = [1,2,3,1,1,2,3];
+console.log(num);
+
+
+// Set looks like objects, we need to understand the difference in the structure
+// create a set : Alwys use costructor function
+
+let numbers = new Set();
+console.log("", numbers);
+
+let obj = {};
+console.log(obj);
+
+
+// Most important question : Remove the duplicate elements from an array.
+let value = new Set("harsha");
+let value2 = new Set(num);
+
+
+console.log(value);
+console.log(value2);
+
+
+let newNum = [];
+newNum = [...value2, ...value]    //spread opertor to do the destructing of a set, creating array from a set
+console.log(newNum);
+
+
+
+// Basic functions which set provides.
+
+// add, has, size is a property, has, clear, delete
+
+
+// add funtion 
+let mySet = new Set();
+console.log("My set", mySet);
+
+mySet.add(12)   // numeric value
+mySet.add("student")   // string value
+mySet.add([1,2,3,4,5])   // array value
+mySet.add(true)   // boolean value
+mySet.add({id:1, name:"john"})   // obj value
+
+
 console.log(mySet);
 
-//Remove the duplicate elements from the array [1,1,1,2,3,5,4,5,6,6]
-//and return a new array having unique values
 
-var arr = [1,1,1,2,3,5,4,5];
-var tempSet = new Set(arr);
-console.log(arr);
-console.log(tempSet);
-var newArr = [...tempSet];
-console.log(newArr);
+// has function == checks if the element exists or not
+// returns you boolean value
 
-//spread operator in JS => ...
+console.log("has function", mySet.has(12));
+console.log("has function2", mySet.has("elevation"));
+console.log("has function2", mySet.has(true));
 
-var arr =[1,2,3,4,5]
-arr[0] = 1;
-console.log(arr);
-var mySet2 = new Set();
 
-mySet2.add(12);
-mySet2.add("hello");
-mySet2.add([1,2]);
-mySet2.add({name:"john"});
-console.log(mySet2);
-mySet2.delete("hello")
-mySet2.clear()
-console.log(mySet.has());
+// size == how many elements are present in the set
+console.log(mySet.size);
 
-// add, delete, has, clear, size
 
-// const str = 'abcadeecfb';
-// const mySet = new Set(str);
-// const strArray = [...mySet];
-// console.log(strArray.join(''));
+// delete
+mySet.delete(12)
+console.log(mySet);
+
+
+// clear == deletes all the elements from the set 
+mySet.clear();
+console.log(mySet);
